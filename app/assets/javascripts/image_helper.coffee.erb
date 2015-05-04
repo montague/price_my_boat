@@ -1,0 +1,9 @@
+<%
+imgs = Dir["#{Rails.root}/app/assets/images/**"].inject({}) do |h,f|
+ file = Pathname.new(f).basename
+ h.merge!(file => image_path(file))
+end
+%>
+
+window.image_path = (name) ->
+  <%= imgs.to_json %>[name]

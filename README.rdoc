@@ -1,0 +1,4 @@
+== README
+```
+thin config -C /etc/thin/myapp.example.com -c /var/www/myapp.example.com --servers 3 -e development # or: -e production for caching, etc
+```

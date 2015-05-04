@@ -1,0 +1,10 @@
+= semantic_form_for @test_run, :remote => true, :html => {:class => "form-signin"} do |f|
+  #algorithm_test_run
+
+  %h2.form-signin-heading Test an Algorithm
+  = f.input :algorithm, :as => :select, :collection => AlgorithmTestRun::ALGORITHMS,
+    :class => 'form-control', :include_blank => false
+  = f.number_field :k, :class => 'form-control', :placeholder => 'k'
+  %br
+  = f.action :submit, :label => 'Perform test', :button_html => {:class => 'btn btn-lg btn-primary', :data => {:disable_with => 'Doing math...'}}
+

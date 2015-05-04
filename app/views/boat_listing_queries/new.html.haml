@@ -1,0 +1,10 @@
+= semantic_form_for @query, :remote => true, :html => {:class => "form-signin"} do |f|
+  #query_result
+
+  %h2.form-signin-heading Enter Boat Data
+  = f.input :length, :as => :number, :label => "Length (in ft)", :input_html => {:placeholder => 30}
+  = f.input :year_of_boat, :as => :number, :input_html => {:placeholder => 2012}
+  = f.input :listed_price, :as => :number, :input_html => {:placeholder => 50100}
+  %br
+  = f.action :submit, :label => "Get Value", :button_html => {:class => 'btn btn-lg btn-primary', :data => {:disable_with => 'Doing math...'}}
+
